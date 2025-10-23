@@ -18,9 +18,9 @@ public class Bullet : MonoBehaviour // This script controls the bullet movement 
             Destroy(gameObject); // Now after colliding with enemy and dealing damage destroy the bullet
         }
 
-        if (collision.gameObject.tag == "Enemy")
+        if (otherGameObject.CompareTag("Wall"))
         {
-            Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
     }
 }

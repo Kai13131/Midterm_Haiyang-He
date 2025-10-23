@@ -95,13 +95,13 @@ public class PlayerScript : MonoBehaviour
         //If it does...
         if (other.gameObject.CompareTag("Enemy"))
         {
-            //Run your 'you lose' function!
             player_currentHealth -= 1;
             UpdateHP();
             if (player_currentHealth < 1)
             {
                 Die();
             }
+
         }
         
         //This checks to see if the thing you bumped into has the CoinScript script on it

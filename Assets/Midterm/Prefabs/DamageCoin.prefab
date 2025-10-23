@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2624612766113077728}
   - component: {fileID: 6649222875414247176}
   - component: {fileID: -7638422846036187618}
-  - component: {fileID: 7225484636665338530}
+  - component: {fileID: 3866333151715280287}
   m_Layer: 0
   m_Name: DamageCoin
   m_TagString: Untagged
@@ -148,7 +148,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7225484636665338530
+--- !u!114 &3866333151715280287
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,3 +160,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e138f2920ad925488929fed72f5148c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0.01

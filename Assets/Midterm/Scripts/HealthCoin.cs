@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class HealthCoin : MonoBehaviour
 {
+    public float speed = 0.01f;
     public void GetBumped()
     {
         //This destroys the coin
@@ -10,6 +11,7 @@ public class HealthCoin : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
     }
 
     // Update is called once per frame
@@ -17,6 +19,6 @@ public class HealthCoin : MonoBehaviour
     {
         transform.Rotate(0, 0, 0.25f);
 
-        transform.position += new Vector3(-0.002f, 0, 0);
+        transform.position += new Vector3(-speed, 0, 0);
     }
 }

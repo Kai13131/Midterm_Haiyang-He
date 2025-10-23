@@ -34,6 +34,8 @@ public class Spawn : MonoBehaviour
         {
             enemyTimer = enemyDuration;
             Instantiate(enemyPrefab, new Vector3(11, Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
+            Instantiate(enemyPrefab, new Vector3(11, Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
+            Instantiate(enemyPrefab, new Vector3(11, Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
         }
 
         healthCoinTimer -= Time.deltaTime;

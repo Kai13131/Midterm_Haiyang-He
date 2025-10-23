@@ -1,17 +1,34 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class Health : MonoBehaviour // This script controls health of our enemy
 {
-    public int currentHealth = 10; // Declaring the current health variable
+    public int currentHealth = 0; // Declaring the current health variable
 
     // Creating a new bullet object to access the bullet damage variable
     private PlayerScript player;
-    
+
     void Start()
     {
+        currentHealth = 10;
         player = GameObject.Find("Player").GetComponent<PlayerScript>();
     }
+
+    void Update()
+    {
+        if(transform.position.x < -9.5)
+        {
+            transform.position = new Vector3(-transform.position.x,transform.position.y,transform.position.z);
+            player.player_currentHealth -= 1;
+            player.UpdateHP();
+        }
+        if (player.player_currentHealth < 0)
+        {
+            player.Die();
+        }
+    }
+    
     public void TakeDamage() { // Declaring a function for other objects to "deal damage" to this object
          // Getting the player script component off the player game object and storing it in a variable
         currentHealth -= player.getDamage(); // Decreasing the current health of the object
@@ -21,5 +38,6 @@ public class Health : MonoBehaviour // This script controls health of our enemy
             player.Score += 5; // Increase the player's score by 1
             player.UpdateScore(); // Update the score text
         }
+        
     }
 }

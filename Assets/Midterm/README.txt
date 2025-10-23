@@ -1,3 +1,7 @@
-For the code in this folder you are free to modify and edit
+Spaceship Fights Aliens
 
-Check the drive for detailed midterm instructions
+Using arrow keys to move.
+
+Get as much scores you can!
+
+ENGJOY THE GAME!!!

@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class HW2_0 : MonoBehaviour
 {
-    int numberAlive = 10;
-    string userName = "MyGuy";
-    bool isAlive = true;
-    float currentHealth = 0;
+    //int numberAlive = 10;
+    //string userName = "MyGuy";
+    //bool isAlive = true;
+    //float currentHealth = 0;
 
     void Start()
     {

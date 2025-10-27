@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HealthCoinMovement : MonoBehaviour
+public class ShootingSpeedCoinMovement : MonoBehaviour
 {
     public float speed = 1f;
     public void GetBumped()
@@ -9,9 +9,9 @@ public class HealthCoinMovement : MonoBehaviour
         Destroy(gameObject);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -20,9 +20,5 @@ public class HealthCoinMovement : MonoBehaviour
         transform.Rotate(0, 0, 0.25f);
 
         transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
-        if (transform.position.x < -10f)
-        {
-            Destroy(gameObject);
-        }
     }
 }

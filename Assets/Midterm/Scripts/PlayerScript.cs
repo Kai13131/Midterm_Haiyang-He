@@ -17,6 +17,7 @@ public class PlayerScript : MonoBehaviour
     public TextMeshPro ScoreText;
     public TextMeshPro HPText;
     public TextMeshPro ADText;
+    public TextMeshPro ASText;
     //This will control how fast the player moves
     public float Speed = 5;
     
@@ -24,18 +25,26 @@ public class PlayerScript : MonoBehaviour
     public int Score = 0;
     public int player_currentHealth = 3;
     public int Damage = 1;
-    public int getDamage()
-    {
-        return Damage;
-    }
+
+    private Shooting shooting;
 
     //Start automatically gets triggered once when the objects turns on/the game starts
+
     void Start()
     {
+        shooting = gameObject.GetComponent<Shooting>();
         //During setup we call UpdateScore to make sure our score text looks correct
         UpdateScore();
         UpdateHP();
         UpdateAD();
+        UpdateAS();
+
+        
+    }
+
+    public int getDamage()
+    {
+        return Damage;
     }
 
     //Update is a lot like Start, but it automatically gets triggered once per frame
@@ -101,7 +110,6 @@ public class PlayerScript : MonoBehaviour
             {
                 Die();
             }
-
         }
         
         //This checks to see if the thing you bumped into has the CoinScript script on it
@@ -115,7 +123,7 @@ public class PlayerScript : MonoBehaviour
             UpdateScore();
         }
 
-        HealthCoin coin_addHealth = other.gameObject.GetComponent<HealthCoin>();
+        HealthCoinMovement coin_addHealth = other.gameObject.GetComponent<HealthCoinMovement>();
         if(coin_addHealth != null)
         {
             //Tell the coin that you bumped into them so they can self destruct or whatever
@@ -123,12 +131,21 @@ public class PlayerScript : MonoBehaviour
             player_currentHealth += 1;
             UpdateHP();
         }
-        PlayerDamageCoin coin_addAD = other.gameObject.GetComponent<PlayerDamageCoin>();
+
+        DamageCoinMovement coin_addAD = other.gameObject.GetComponent<DamageCoinMovement>();
         if(coin_addAD != null)
         {
             coin_addAD.GetBumped();
             Damage += 1;
             UpdateAD();
+        }
+
+        ShootingSpeedCoinMovement coin_addShootingSpeed = other.gameObject.GetComponent<ShootingSpeedCoinMovement>();
+        if (coin_addShootingSpeed != null)
+        {
+            coin_addShootingSpeed.GetBumped();
+            shooting.shootCooldown -= shooting.shootCooldown * 0.1f;
+            UpdateAS();
         }
     }
 
@@ -146,10 +163,24 @@ public class PlayerScript : MonoBehaviour
     {
         ADText.text = "AD: " + Damage;
     }
+    public void UpdateAS()
+    {
+        ASText.text = "AS: " + shooting.shootCooldown;
+    }
 
     //If this function is called, the player character dies. The player character is destroyed.
     public void Die()
     {
         Destroy(gameObject);
+
+        if (CompareTag("Player"))
+        {
+            GameOverManager gm = FindFirstObjectByType<GameOverManager>();
+            if(gm != null)
+            {
+                gm.GameOver();
+            }
+        }
+        
     }
 }

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6640348719805483287}
   - component: {fileID: 2138754294234856219}
   - component: {fileID: -4279265759228891095}
+  - component: {fileID: 5167872718396777758}
   - component: {fileID: -7894812838228818077}
-  - component: {fileID: 5514891357868731481}
   m_Layer: 0
   m_Name: HealthCoin
   m_TagString: Untagged
@@ -102,6 +102,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b73afefba79f68945917c6f83aad85a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5167872718396777758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7583523032615271986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e84cbcc5deecd4499490e5c6a34518e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
 --- !u!61 &-7894812838228818077
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,16 +161,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5514891357868731481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7583523032615271986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e84cbcc5deecd4499490e5c6a34518e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.01

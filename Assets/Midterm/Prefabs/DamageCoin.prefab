@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2371980422361228052}
   - component: {fileID: 2624612766113077728}
   - component: {fileID: 6649222875414247176}
+  - component: {fileID: -8774864043401796131}
   - component: {fileID: -7638422846036187618}
-  - component: {fileID: 3866333151715280287}
   m_Layer: 0
   m_Name: DamageCoin
   m_TagString: Untagged
@@ -102,6 +102,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b73afefba79f68945917c6f83aad85a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8774864043401796131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3714844297824886589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e138f2920ad925488929fed72f5148c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
 --- !u!61 &-7638422846036187618
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,16 +161,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3866333151715280287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3714844297824886589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e138f2920ad925488929fed72f5148c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.01

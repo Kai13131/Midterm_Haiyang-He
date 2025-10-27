@@ -5,7 +5,7 @@ public class Shooting : MonoBehaviour // This script controls the player shootin
 {
     public GameObject bulletPrefab;
     public float shootTime = 0.0f;
-    public float shootCooldown = 0.5f;
+    public float shootCooldown = 1f;
 
     void Update()
     {
@@ -14,5 +14,10 @@ public class Shooting : MonoBehaviour // This script controls the player shootin
             shootTime = shootCooldown;
             Instantiate(bulletPrefab, transform.position, Quaternion.Euler(0, 0, 0));
         }
+    }
+
+    public float getShootCooldown()
+    {
+        return shootCooldown;
     }
 }

@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour // This script controls the bullet movement 
     // Update is called once per frame
     void Update()
     {
-        transform.position += direction * speed; // Moving bullet
+        transform.position += direction * speed * Time.deltaTime; // Moving bullet
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {

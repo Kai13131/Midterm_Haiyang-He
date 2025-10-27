@@ -4,15 +4,18 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class Health : MonoBehaviour // This script controls health of our enemy
 {
-    public int currentHealth = 0; // Declaring the current health variable
+    public float currentHealth = 10f; // Declaring the current health variable
 
     // Creating a new bullet object to access the bullet damage variable
     private PlayerScript player;
-
+    public float powerupTimer = 0f;
+    public float powerupDuration = 0f;
     void Start()
     {
-        currentHealth = 10;
         player = GameObject.Find("Player").GetComponent<PlayerScript>();
+
+        powerupTimer = 60f;
+        powerupDuration = 30f;
     }
 
     void Update()
@@ -23,9 +26,13 @@ public class Health : MonoBehaviour // This script controls health of our enemy
             player.player_currentHealth -= 1;
             player.UpdateHP();
         }
-        if (player.player_currentHealth < 0)
+
+        powerupTimer -= Time.deltaTime;
+        if (powerupTimer < 0)
         {
-            player.Die();
+            powerupTimer = powerupDuration;
+            currentHealth += 10f;
+            Debug.Log("Enemy Health Increased to: " + currentHealth);
         }
     }
     
@@ -38,6 +45,5 @@ public class Health : MonoBehaviour // This script controls health of our enemy
             player.Score += 5; // Increase the player's score by 1
             player.UpdateScore(); // Update the score text
         }
-        
     }
 }

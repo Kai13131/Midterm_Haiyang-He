@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class PlayerDamageCoin : MonoBehaviour
+public class DamageCoinMovement : MonoBehaviour
 {
-    public float speed = 0.01f;
+    public float speed = 1f;
     public void GetBumped()
     {
         //This destroys the coin
@@ -19,6 +19,10 @@ public class PlayerDamageCoin : MonoBehaviour
     {
         transform.Rotate(0, 0, 0.25f);
 
-        transform.position += new Vector3(-speed, 0, 0);
+        transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
+        if (transform.position.x < -10f)
+        {
+            Destroy(gameObject);
+        }
     }
 }

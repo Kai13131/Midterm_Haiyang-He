@@ -103,9 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ec3cfa0d4e56b499d97f79696f7ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.5
-  powerupTimer: 0
-  powerupDuration: 60
+  moveSpeed: 0.8
 --- !u!114 &8504616889645955019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,8 +117,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 10
-  powerupTimer: 0
-  powerupDuration: 0
 --- !u!61 &8365267220268449897
 BoxCollider2D:
   m_ObjectHideFlags: 0

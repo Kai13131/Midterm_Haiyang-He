@@ -36,10 +36,8 @@ public class PlayerScript : MonoBehaviour
         //During setup we call UpdateScore to make sure our score text looks correct
         UpdateScore();
         UpdateHP();
-        UpdateAD();
+        UpdateAD(); 
         UpdateAS();
-
-        
     }
 
     public int getDamage()

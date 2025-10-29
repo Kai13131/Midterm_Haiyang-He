@@ -136,7 +136,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000000
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -899,6 +899,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 8545098912336372667, guid: fb946d28a97bb974a85272d12a1a51be, type: 3}
+    - {fileID: 8504616889645955019, guid: fb946d28a97bb974a85272d12a1a51be, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1987,6 +1988,7 @@ MonoBehaviour:
   healthCoinTimer: 0
   damageCoinTimer: 0
   shootingSpeedTimer: 0
+  powerUpEnemyTimer: 0
   enemyPrefab: {fileID: 1849279779400285333, guid: fb946d28a97bb974a85272d12a1a51be, type: 3}
   healthCoinPrefab: {fileID: 7583523032615271986, guid: 361eb921e4b60b844b251c7441dd2a40, type: 3}
   damageCoinPrefab: {fileID: 3714844297824886589, guid: af2ffcddf0ce51248b402ad06d77caa3, type: 3}

@@ -83,7 +83,7 @@ public class Spawn : MonoBehaviour
         {
             for(int i = 0; i < 3; i++)
             {
-                newEnemy1 = Instantiate(enemyPrefab, new Vector3(11, Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
+                newEnemy1 = Instantiate(enemyPrefab, new Vector3(Random.Range(9.5f, 13f), Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
                 newEnemy1.GetComponent<Health>().currentHealth = enemyHealth;
 
             }
@@ -93,7 +93,7 @@ public class Spawn : MonoBehaviour
         {
             for (int i = 0; i < 4; i++)
             {
-                newEnemy1 = Instantiate(enemyPrefab, new Vector3(11, Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
+                newEnemy1 = Instantiate(enemyPrefab, new Vector3(Random.Range(9.5f, 13f), Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
                 newEnemy1.GetComponent<Health>().currentHealth = enemyHealth;
 
             }
@@ -102,16 +102,16 @@ public class Spawn : MonoBehaviour
         {
             for (int i = 0; i < 5; i++)
             {
-                newEnemy1 = Instantiate(enemyPrefab, new Vector3(11, Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
+                newEnemy1 = Instantiate(enemyPrefab, new Vector3(Random.Range(9.5f,13f), Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
                 newEnemy1.GetComponent<Health>().currentHealth = enemyHealth;
 
             }
         }
         else
         {
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 6; i++) 
             {
-                newEnemy1 = Instantiate(enemyPrefab, new Vector3(11, Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
+                newEnemy1 = Instantiate(enemyPrefab, new Vector3(Random.Range(9.5f, 13f), Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
                 newEnemy1.GetComponent<Health>().currentHealth = enemyHealth;
 
             }
@@ -132,14 +132,14 @@ public class Spawn : MonoBehaviour
 
     void healthCoinSpawn()
     {
-        Instantiate(healthCoinPrefab, new Vector3(12, Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
+        Instantiate(healthCoinPrefab, new Vector3(Random.Range(9.5f, 13f), Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
     }
     void damageCoinSpawn()
     {
-        Instantiate(damageCoinPrefab, new Vector3(12, Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
+        Instantiate(damageCoinPrefab, new Vector3(Random.Range(9.5f, 13f), Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
     }
     void shootingSpeedCoinSpawn()
     {
-        Instantiate(shootingSpeedCoinPrefab, new Vector3(12, Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
+        Instantiate(shootingSpeedCoinPrefab, new Vector3(Random.Range(9.5f, 13f), Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
     }
 }

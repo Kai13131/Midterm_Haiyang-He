@@ -16,7 +16,6 @@ public class Health : MonoBehaviour // This script controls health of our enemy
 
     void Update()
     {
-
         if (transform.position.x < -9.5)
         {
             transform.position = new Vector3(-transform.position.x,transform.position.y,transform.position.z);

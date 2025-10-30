@@ -13,7 +13,7 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         //Rotating the enemy around the Z axis
-        transform.Rotate(0,0, moveSpeed * 1.5f * Time.deltaTime);
+        transform.Rotate(0,0, moveSpeed * 1.5f);
         transform.position += new Vector3(-moveSpeed, 0, 0) * Time.deltaTime;
     }
 

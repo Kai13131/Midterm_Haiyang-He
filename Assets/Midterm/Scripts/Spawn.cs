@@ -1,8 +1,10 @@
 using UnityEngine;
 using System.Collections;
 using Unity.VisualScripting;
+using JetBrains.Annotations;
 public class Spawn : MonoBehaviour
 {
+    public int roundCounter = 0;
     public float enemyTimer = 0.0f;
     public float healthCoinTimer = 0.0f;
     public float damageCoinTimer = 0.0f;
@@ -19,10 +21,7 @@ public class Spawn : MonoBehaviour
     public GameObject healthCoinPrefab;
     public GameObject damageCoinPrefab;
     public GameObject shootingSpeedCoinPrefab;
-
-    GameObject newEnemy1;
-    GameObject newEnemy2;
-    GameObject newEnemy3;
+    
     float enemyHealth = 10f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -75,19 +74,54 @@ public class Spawn : MonoBehaviour
             shootingSpeedCoinSpawn();
         }
     }
-
+    
     void enemySpawn()
     {
-        newEnemy1 = Instantiate(enemyPrefab, new Vector3(11, Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
-        newEnemy2 = Instantiate(enemyPrefab, new Vector3(11, Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
-        newEnemy3 = Instantiate(enemyPrefab, new Vector3(11, Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
+        GameObject newEnemy1;
 
-        newEnemy1.GetComponent<Health>().currentHealth = enemyHealth;
-        newEnemy2.GetComponent<Health>().currentHealth = enemyHealth;
-        newEnemy3.GetComponent<Health>().currentHealth = enemyHealth;
+        if (roundCounter < 5)
+        {
+            for(int i = 0; i < 3; i++)
+            {
+                newEnemy1 = Instantiate(enemyPrefab, new Vector3(11, Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
+                newEnemy1.GetComponent<Health>().currentHealth = enemyHealth;
+
+            }
+
+        }
+        else if(roundCounter > 5 && roundCounter < 10)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                newEnemy1 = Instantiate(enemyPrefab, new Vector3(11, Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
+                newEnemy1.GetComponent<Health>().currentHealth = enemyHealth;
+
+            }
+        }
+        else if(roundCounter > 10 && roundCounter < 15)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                newEnemy1 = Instantiate(enemyPrefab, new Vector3(11, Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
+                newEnemy1.GetComponent<Health>().currentHealth = enemyHealth;
+
+            }
+        }
+        else
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                newEnemy1 = Instantiate(enemyPrefab, new Vector3(11, Random.Range(-4.5f, 4.5f), 0), Quaternion.Euler(0, 0, 0));
+                newEnemy1.GetComponent<Health>().currentHealth = enemyHealth;
+
+            }
+        }
+        
         Debug.Log("Current Health: " + enemyHealth);
         if (powerUpEnemyTimer < 0 && powerUpEnemyTimer > -10)
         {
+            roundCounter += 1;
+            Debug.Log("Round: " + roundCounter);
             powerUpenemyDuration = 45f;
             powerUpEnemyTimer = powerUpenemyDuration;
 

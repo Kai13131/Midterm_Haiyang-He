@@ -17,7 +17,7 @@ public class HealthCoinMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, 0, 0.25f);
+        transform.Rotate(0, 0, speed * Time.deltaTime);
 
         transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
         if (transform.position.x < -10f)

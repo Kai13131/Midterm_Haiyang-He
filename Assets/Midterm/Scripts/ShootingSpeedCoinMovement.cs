@@ -17,7 +17,7 @@ public class ShootingSpeedCoinMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, 0, 0.25f);
+        transform.Rotate(0, 0, speed * 2 * Time.deltaTime);
 
         transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
     }

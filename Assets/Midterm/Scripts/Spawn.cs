@@ -22,7 +22,7 @@ public class Spawn : MonoBehaviour
     public GameObject damageCoinPrefab;
     public GameObject shootingSpeedCoinPrefab;
     
-    float enemyHealth = 10f;
+    public float enemyHealth = 10f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -98,7 +98,7 @@ public class Spawn : MonoBehaviour
 
             }
         }
-        else if(roundCounter > 10 && roundCounter < 15)
+        else if(roundCounter > 10 && roundCounter < 20)
         {
             for (int i = 0; i < 5; i++)
             {
@@ -107,7 +107,7 @@ public class Spawn : MonoBehaviour
 
             }
         }
-        else
+        else if(roundCounter > 20 && roundCounter < 30)
         {
             for (int i = 0; i < 6; i++) 
             {
@@ -118,11 +118,11 @@ public class Spawn : MonoBehaviour
         }
         
         Debug.Log("Current Health: " + enemyHealth);
-        if (powerUpEnemyTimer < 0 && powerUpEnemyTimer > -10)
+        if (powerUpEnemyTimer < 0)
         {
             roundCounter += 1;
             Debug.Log("Round: " + roundCounter);
-            powerUpenemyDuration = 45f;
+            powerUpenemyDuration = 30f;
             powerUpEnemyTimer = powerUpenemyDuration;
 
             enemyHealth *= 1.5f;

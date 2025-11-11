@@ -19,7 +19,13 @@ public class SpawnEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpawnMutipleEnemies();
+        spawnTimer -= Time.deltaTime;
+        if (spawnTimer < 0)
+        {
+            spawnTimer = spawnCooldown;
+            SpawnMutipleEnemies();
+        }
+
     }
 
     void SpawnRandomEnemy()
@@ -32,16 +38,10 @@ public class SpawnEnemy : MonoBehaviour
 
     void SpawnMutipleEnemies()
     {
-        spawnTimer -= Time.deltaTime;
-        if(spawnTimer < 0)
+        int enemyCount = 3;
+        for (int i = 0; i < enemyCount; i++)
         {
-            spawnTimer = spawnCooldown;
-            int enemyCount = 3;
-            for (int i = 0; i < enemyCount; i++)
-            {
-                SpawnRandomEnemy();
-            }
-        }
-        
+            SpawnRandomEnemy();
+        }        
     }
 }

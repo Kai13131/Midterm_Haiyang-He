@@ -24,10 +24,10 @@ public class PlayerScript : MonoBehaviour
     //This is how many points we currently have
     public int Score = 0;
     public int player_currentHealth = 3;
-    public int Damage = 1;
+    public float Damage = 1;
 
     private Shooting shooting;
-
+    
     //Start automatically gets triggered once when the objects turns on/the game starts
 
     void Start()
@@ -40,7 +40,7 @@ public class PlayerScript : MonoBehaviour
         UpdateAS();
     }
 
-    public int getDamage()
+    public float getDamage()
     {
         return Damage;
     }
@@ -52,7 +52,7 @@ public class PlayerScript : MonoBehaviour
         //The code below controls the character's movement
         //First we make a variable that we'll use to record how we want to move
         Vector2 vel = new Vector2(0,0);
-
+        
         //Then we use if statement to figure out what that variable should look like
         
         //If I hold the right arrow key, the player should move right. . .
@@ -134,7 +134,8 @@ public class PlayerScript : MonoBehaviour
         if(coin_addAD != null)
         {
             coin_addAD.GetBumped();
-            Damage += 1;
+            float upgradeAD = 
+            Damage *= 1.2f;
             UpdateAD();
         }
 
@@ -142,7 +143,11 @@ public class PlayerScript : MonoBehaviour
         if (coin_addShootingSpeed != null)
         {
             coin_addShootingSpeed.GetBumped();
-            shooting.shootCooldown -= shooting.shootCooldown * 0.1f;
+            shooting.shootCooldown -= shooting.shootCooldown * 0.05f;
+            if(shooting.shootCooldown < 0.1f)
+            {
+                shooting.shootCooldown = 0.1f;
+            }
             UpdateAS();
         }
     }
@@ -156,6 +161,10 @@ public class PlayerScript : MonoBehaviour
     public void UpdateHP()
     {
         HPText.text = "HP: " + player_currentHealth;
+        if(player_currentHealth <= 0)
+        {
+            Die();
+        }
     }
     public void UpdateAD()
     {

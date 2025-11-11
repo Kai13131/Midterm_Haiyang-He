@@ -3,10 +3,18 @@ using UnityEngine;
 public class Bullet : MonoBehaviour // This script controls the bullet movement and collision
 {
     public Vector3 direction = new Vector3(1, 0, 0); // Declaring a variable for the direction the bullet is moving in
-    public float speed = 0.2f; // Declaring a variable 
+    public float speed = 0.2f; // Declaring a variable
+    public GameObject enemyPrefab;
+
     // Update is called once per frame
     void Update()
     {
+        
+            //Vector3 EnnemyLocation = enemyPrefab.transform.position;
+            //Vector3 vectorToEnemy = EnnemyLocation - transform.position;
+            //Vector3 dirctionToEnemy = vectorToEnemy.normalized;
+            //transform.position += dirctionToEnemy * speed * Time.deltaTime;
+        
         transform.position += direction * speed * Time.deltaTime; // Moving bullet
     }
 

@@ -25,7 +25,6 @@ public class SpawnEnemy : MonoBehaviour
             spawnTimer = spawnCooldown;
             SpawnMutipleEnemies();
         }
-
     }
 
     void SpawnRandomEnemy()

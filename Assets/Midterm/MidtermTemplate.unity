@@ -232,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2458693810029192831, guid: 6e8aeaa54abe6bc4d8686632c0c93338, type: 3}
   shootTime: 0
-  shootCooldown: 0.5
+  shootCooldown: 0.3
 --- !u!1 &394526835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,6 +1994,7 @@ MonoBehaviour:
   healthCoinPrefab: {fileID: 7583523032615271986, guid: 361eb921e4b60b844b251c7441dd2a40, type: 3}
   damageCoinPrefab: {fileID: 3714844297824886589, guid: af2ffcddf0ce51248b402ad06d77caa3, type: 3}
   shootingSpeedCoinPrefab: {fileID: 1658005879004007829, guid: 58900fb4884d022449de569809ac06ab, type: 3}
+  enemyHealth: 5
 --- !u!1001 &982066917536409004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2099,7 +2100,7 @@ PrefabInstance:
       objectReference: {fileID: 409678493}
     - target: {fileID: 5295994739419230840, guid: 5465daea84a2bcb43acd34cbcbb9c9ae, type: 3}
       propertyPath: Damage
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5295994739419230840, guid: 5465daea84a2bcb43acd34cbcbb9c9ae, type: 3}
       propertyPath: HPText
